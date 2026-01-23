@@ -120,7 +120,8 @@ export default function EnDonate() {
                       type="radio"
                       name="payment"
                       value="card"
-                      defaultChecked
+                      checked={paymentMethod === "card"}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-4 h-4"
                     />
                     <span className="text-gray-700">Credit Card (Visa / Mastercard)</span>
@@ -130,6 +131,8 @@ export default function EnDonate() {
                       type="radio"
                       name="payment"
                       value="paypal"
+                      checked={paymentMethod === "paypal"}
+                      onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-4 h-4"
                     />
                     <span className="text-gray-700">PayPal</span>
