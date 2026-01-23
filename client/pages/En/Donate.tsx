@@ -215,15 +215,20 @@ export default function EnDonate() {
                     onChange={() => setDeliveryMethod("self")}
                     className="w-4 h-4 mt-1"
                   />
-                  <div>
+                  <div className="flex-1">
                     <p className="font-medium text-gray-900">Donor brings items</p>
                     <p className="text-sm text-gray-600 mt-1 flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      Near Biranzarane School – South
+                      Sociocultural Center El'Arissa Safi – Near Biranzarane School
                     </p>
-                    <div className="mt-3 bg-gray-100 rounded-lg p-3 aspect-video flex items-center justify-center">
-                      <p className="text-sm text-gray-600">Google Maps Embed</p>
-                    </div>
+                    <a
+                      href="https://maps.app.goo.gl/xUaGTjZ3weDmfRJY6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 block bg-rose-100 hover:bg-rose-200 rounded-lg p-3 text-center transition-colors"
+                    >
+                      <p className="text-sm font-medium text-rose-700">View Location on Google Maps</p>
+                    </a>
                   </div>
                 </label>
 
