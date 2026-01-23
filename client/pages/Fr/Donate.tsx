@@ -215,15 +215,20 @@ export default function FrDonate() {
                     onChange={() => setDeliveryMethod("self")}
                     className="w-4 h-4 mt-1"
                   />
-                  <div>
+                  <div className="flex-1">
                     <p className="font-medium text-gray-900">Apporter le don</p>
                     <p className="text-sm text-gray-600 mt-1 flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      Près de l'école Biranzarane – Sud
+                      Centre Socioculturel El'Arissa Safi – Près du collège Biranzarane
                     </p>
-                    <div className="mt-3 bg-gray-100 rounded-lg p-3 aspect-video flex items-center justify-center">
-                      <p className="text-sm text-gray-600">Carte Google Maps</p>
-                    </div>
+                    <a
+                      href="https://maps.app.goo.gl/xUaGTjZ3weDmfRJY6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 block bg-rose-100 hover:bg-rose-200 rounded-lg p-3 text-center transition-colors"
+                    >
+                      <p className="text-sm font-medium text-rose-700">Voir la localisation sur Google Maps</p>
+                    </a>
                   </div>
                 </label>
 
