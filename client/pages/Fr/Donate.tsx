@@ -6,6 +6,7 @@ export default function FrDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [deliveryMethod, setDeliveryMethod] = useState("");
+  const [paymentMethod, setPaymentMethod] = useState("card");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
