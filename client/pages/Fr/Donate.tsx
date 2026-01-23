@@ -27,7 +27,7 @@ export default function FrDonate() {
 
   const handleItemToggle = (item: string) => {
     setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
     );
   };
 
@@ -72,7 +72,8 @@ export default function FrDonate() {
 
             <div className="mb-8">
               <p className="text-gray-600 mb-4">
-                Montant minimum : <span className="font-semibold text-rose-600">20 dirhams</span>
+                Montant minimum :{" "}
+                <span className="font-semibold text-rose-600">20 dirhams</span>
               </p>
 
               <div className="mb-6">
@@ -104,7 +105,9 @@ export default function FrDonate() {
                   type="number"
                   min="20"
                   value={donationAmount}
-                  onChange={(e) => setDonationAmount(parseInt(e.target.value) || 20)}
+                  onChange={(e) =>
+                    setDonationAmount(parseInt(e.target.value) || 20)
+                  }
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-500 focus:outline-none text-lg"
                   placeholder="Entrez le montant en dirhams"
                 />
@@ -155,7 +158,9 @@ export default function FrDonate() {
 
             {/* Form Section */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-4">Vos informations personnelles</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Vos informations personnelles
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -186,10 +191,15 @@ export default function FrDonate() {
 
             {/* Items Selection */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-4">Qu'aimeriez-vous donner?</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Qu'aimeriez-vous donner?
+              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {items.map((item) => (
-                  <label key={item} className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
+                  <label
+                    key={item}
+                    className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
                     <input
                       type="checkbox"
                       checked={selectedItems.includes(item)}
@@ -204,7 +214,9 @@ export default function FrDonate() {
 
             {/* Delivery Method */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">Mode de remise</h3>
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Mode de remise
+              </h3>
               <div className="space-y-4">
                 <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors">
                   <input
@@ -219,7 +231,8 @@ export default function FrDonate() {
                     <p className="font-medium text-gray-900">Apporter le don</p>
                     <p className="text-sm text-gray-600 mt-1 flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      Centre Socioculturel El'Arissa Safi – Près du collège Biranzarane
+                      Centre Socioculturel El'Arissa Safi – Près du collège
+                      Biranzarane
                     </p>
                     <a
                       href="https://maps.app.goo.gl/xUaGTjZ3weDmfRJY6"
@@ -227,7 +240,9 @@ export default function FrDonate() {
                       rel="noopener noreferrer"
                       className="mt-3 block bg-rose-100 hover:bg-rose-200 rounded-lg p-3 text-center transition-colors"
                     >
-                      <p className="text-sm font-medium text-rose-700">Voir la localisation sur Google Maps</p>
+                      <p className="text-sm font-medium text-rose-700">
+                        Voir la localisation sur Google Maps
+                      </p>
                     </a>
                   </div>
                 </label>
@@ -242,7 +257,9 @@ export default function FrDonate() {
                     className="w-4 h-4 mt-1"
                   />
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">Collecte par l'équipe</p>
+                    <p className="font-medium text-gray-900">
+                      Collecte par l'équipe
+                    </p>
                     {deliveryMethod === "pickup" && (
                       <div className="mt-4 space-y-3">
                         <input
@@ -265,8 +282,13 @@ export default function FrDonate() {
               </div>
             </div>
 
-            <button className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={selectedItems.length === 0 || !formData.firstName || !formData.phone}
+            <button
+              className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={
+                selectedItems.length === 0 ||
+                !formData.firstName ||
+                !formData.phone
+              }
             >
               Confirmer le don matériel
             </button>

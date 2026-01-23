@@ -53,9 +53,7 @@ export default function WhatsAppContact() {
                       <p className="text-sm font-medium text-gray-900">
                         {contact.name}
                       </p>
-                      <p className="text-xs text-gray-500">
-                        À venir
-                      </p>
+                      <p className="text-xs text-gray-500">À venir</p>
                     </div>
                   </div>
                 ) : (
@@ -95,7 +93,7 @@ export default function WhatsAppContact() {
           ) : (
             <MessageCircle className="w-7 h-7" />
           )}
-          
+
           {/* Pulse animation indicator */}
           <span className="absolute inset-0 rounded-full border-2 border-green-400 animate-pulse" />
         </button>
