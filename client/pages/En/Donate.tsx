@@ -206,14 +206,13 @@ export default function EnDonate() {
             <div>
               <h3 className="font-semibold text-gray-900 mb-4">Delivery Method</h3>
               <div className="space-y-4">
-                <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors"
-                  onClick={() => setDeliveryMethod("self")}
-                >
+                <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors">
                   <input
                     type="radio"
                     name="delivery"
                     value="self"
                     checked={deliveryMethod === "self"}
+                    onChange={() => setDeliveryMethod("self")}
                     className="w-4 h-4 mt-1"
                   />
                   <div>
@@ -228,14 +227,13 @@ export default function EnDonate() {
                   </div>
                 </label>
 
-                <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors"
-                  onClick={() => setDeliveryMethod("pickup")}
-                >
+                <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors">
                   <input
                     type="radio"
                     name="delivery"
                     value="pickup"
                     checked={deliveryMethod === "pickup"}
+                    onChange={() => setDeliveryMethod("pickup")}
                     className="w-4 h-4 mt-1"
                   />
                   <div className="flex-1">
