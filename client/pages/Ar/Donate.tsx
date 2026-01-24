@@ -44,8 +44,8 @@ export default function ArDonate() {
   const sendDonationNotification = async (type: "financial" | "material") => {
     try {
       const payload = {
-        firstName: type === "financial" ? formData.name : formData.name,
-        lastName: type === "financial" ? formData.familyName : formData.familyName,
+        firstName: formData.name,
+        lastName: formData.familyName,
         phone: formData.phone,
         donationType: type,
         ...(type === "financial" && { amount: donationAmount }),
@@ -63,6 +63,8 @@ export default function ArDonate() {
       const data = await response.json();
       if (data.success) {
         console.log("✅ Notification sent successfully");
+        setDonationType(type);
+        setShowConfirmation(true);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
