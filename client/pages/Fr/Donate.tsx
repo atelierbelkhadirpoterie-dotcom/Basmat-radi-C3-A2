@@ -320,6 +320,16 @@ export default function FrDonate() {
             Précédent
           </Link>
         </div>
+
+        {/* Confirmation Modal */}
+        <DonationConfirmationModal
+          isOpen={showConfirmation}
+          onClose={() => setShowConfirmation(false)}
+          donationType={donationType}
+          amount={donationAmount}
+          items={selectedItems}
+          donorName={`${formData.firstName} ${formData.lastName}`}
+        />
       </main>
     </div>
   );
