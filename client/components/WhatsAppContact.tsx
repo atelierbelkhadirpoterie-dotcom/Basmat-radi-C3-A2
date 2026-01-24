@@ -5,8 +5,6 @@ const contacts = [
   { name: "Walid", phone: "+212646610766" },
   { name: "Chahd Malak", phone: "+212609869603" },
   { name: "Adnane (Problèmes/Réclamations)", phone: "+212675202336" },
-  { name: "Chef 1 (قائد 1)", phone: "" },
-  { name: "Chef 2", phone: "" },
 ];
 
 export default function WhatsAppContact() {
@@ -53,7 +51,9 @@ export default function WhatsAppContact() {
                       <p className="text-sm font-medium text-gray-900">
                         {contact.name}
                       </p>
-                      <p className="text-xs text-gray-500">À venir</p>
+                      <p className="text-xs text-gray-500">
+                        À venir
+                      </p>
                     </div>
                   </div>
                 ) : (
@@ -93,7 +93,7 @@ export default function WhatsAppContact() {
           ) : (
             <MessageCircle className="w-7 h-7" />
           )}
-
+          
           {/* Pulse animation indicator */}
           <span className="absolute inset-0 rounded-full border-2 border-green-400 animate-pulse" />
         </button>
