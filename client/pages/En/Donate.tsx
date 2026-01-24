@@ -27,7 +27,7 @@ export default function EnDonate() {
 
   const handleItemToggle = (item: string) => {
     setSelectedItems((prev) =>
-      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item],
+      prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]
     );
   };
 
@@ -36,6 +36,34 @@ export default function EnDonate() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const sendDonationNotification = async (type: "financial" | "material") => {
+    try {
+      const payload = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phone: formData.phone,
+        donationType: type,
+        ...(type === "financial" && { amount: donationAmount }),
+        ...(type === "material" && { selectedItems }),
+      };
+
+      const response = await fetch("/api/send-donation-notification", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        console.log("✅ Notification sent successfully");
+      }
+    } catch (error) {
+      console.error("Error sending notification:", error);
+    }
   };
 
   return (
@@ -72,8 +100,7 @@ export default function EnDonate() {
 
             <div className="mb-8">
               <p className="text-gray-600 mb-4">
-                Minimum amount:{" "}
-                <span className="font-semibold text-rose-600">20 MAD</span>
+                Minimum amount: <span className="font-semibold text-rose-600">20 MAD</span>
               </p>
 
               <div className="mb-6">
@@ -105,9 +132,7 @@ export default function EnDonate() {
                   type="number"
                   min="20"
                   value={donationAmount}
-                  onChange={(e) =>
-                    setDonationAmount(parseInt(e.target.value) || 20)
-                  }
+                  onChange={(e) => setDonationAmount(parseInt(e.target.value) || 20)}
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-rose-500 focus:outline-none text-lg"
                   placeholder="Enter amount in MAD"
                 />
@@ -127,9 +152,7 @@ export default function EnDonate() {
                       onChange={(e) => setPaymentMethod(e.target.value)}
                       className="w-4 h-4"
                     />
-                    <span className="text-gray-700">
-                      Credit Card (Visa / Mastercard)
-                    </span>
+                    <span className="text-gray-700">Credit Card (Visa / Mastercard)</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer">
                     <input
@@ -160,9 +183,7 @@ export default function EnDonate() {
 
             {/* Form Section */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-4">
-                Your Information
-              </h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Your Information</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <input
                   type="text"
@@ -193,15 +214,10 @@ export default function EnDonate() {
 
             {/* Items Selection */}
             <div className="mb-8">
-              <h3 className="font-semibold text-gray-900 mb-4">
-                What would you like to donate?
-              </h3>
+              <h3 className="font-semibold text-gray-900 mb-4">What would you like to donate?</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {items.map((item) => (
-                  <label
-                    key={item}
-                    className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors"
-                  >
+                  <label key={item} className="flex items-center gap-3 cursor-pointer p-3 rounded-lg hover:bg-gray-50 transition-colors">
                     <input
                       type="checkbox"
                       checked={selectedItems.includes(item)}
@@ -216,9 +232,7 @@ export default function EnDonate() {
 
             {/* Delivery Method */}
             <div>
-              <h3 className="font-semibold text-gray-900 mb-4">
-                Delivery Method
-              </h3>
+              <h3 className="font-semibold text-gray-900 mb-4">Delivery Method</h3>
               <div className="space-y-4">
                 <label className="flex items-start gap-3 cursor-pointer p-4 border-2 border-gray-200 rounded-lg hover:border-rose-300 transition-colors">
                   <input
@@ -230,13 +244,10 @@ export default function EnDonate() {
                     className="w-4 h-4 mt-1"
                   />
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">
-                      Donor brings items
-                    </p>
+                    <p className="font-medium text-gray-900">Donor brings items</p>
                     <p className="text-sm text-gray-600 mt-1 flex items-center gap-1">
                       <MapPin className="w-4 h-4" />
-                      Sociocultural Center El'Arissa Safi – Near Biranzarane
-                      School
+                      Sociocultural Center El'Arissa Safi – Near Biranzarane School
                     </p>
                     <a
                       href="https://maps.app.goo.gl/xUaGTjZ3weDmfRJY6"
@@ -244,9 +255,7 @@ export default function EnDonate() {
                       rel="noopener noreferrer"
                       className="mt-3 block bg-rose-100 hover:bg-rose-200 rounded-lg p-3 text-center transition-colors"
                     >
-                      <p className="text-sm font-medium text-rose-700">
-                        View Location on Google Maps
-                      </p>
+                      <p className="text-sm font-medium text-rose-700">View Location on Google Maps</p>
                     </a>
                   </div>
                 </label>
@@ -261,9 +270,7 @@ export default function EnDonate() {
                     className="w-4 h-4 mt-1"
                   />
                   <div className="flex-1">
-                    <p className="font-medium text-gray-900">
-                      Team collects items
-                    </p>
+                    <p className="font-medium text-gray-900">Team collects items</p>
                     {deliveryMethod === "pickup" && (
                       <div className="mt-4 space-y-3">
                         <input
@@ -286,13 +293,8 @@ export default function EnDonate() {
               </div>
             </div>
 
-            <button
-              className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
-              disabled={
-                selectedItems.length === 0 ||
-                !formData.firstName ||
-                !formData.phone
-              }
+            <button className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={selectedItems.length === 0 || !formData.firstName || !formData.phone}
             >
               Confirm Material Donation
             </button>
