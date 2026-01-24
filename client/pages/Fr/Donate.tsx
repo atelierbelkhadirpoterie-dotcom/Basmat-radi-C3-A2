@@ -14,6 +14,8 @@ export default function FrDonate() {
     phone: "",
     address: "",
   });
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [donationType, setDonationType] = useState<"financial" | "material">("financial");
 
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
