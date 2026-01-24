@@ -320,6 +320,16 @@ export default function ArDonate() {
             السابق
           </Link>
         </div>
+
+        {/* Confirmation Modal */}
+        <DonationConfirmationModal
+          isOpen={showConfirmation}
+          onClose={() => setShowConfirmation(false)}
+          donationType={donationType}
+          amount={donationAmount}
+          items={selectedItems}
+          donorName={`${formData.name} ${formData.familyName}`}
+        />
       </main>
     </div>
   );
