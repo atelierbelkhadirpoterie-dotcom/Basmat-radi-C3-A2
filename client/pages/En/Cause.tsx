@@ -40,15 +40,18 @@ export default function EnCause() {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-8">
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
             <p>
-              Many infants and children grow up without stable family care, adequate supervision, or essential resources.
+              Many infants and children grow up without stable family care,
+              adequate supervision, or essential resources.
             </p>
 
             <p>
-              Lack of milk, diapers, clothing, and basic healthcare makes early life extremely fragile.
+              Lack of milk, diapers, clothing, and basic healthcare makes early
+              life extremely fragile.
             </p>
 
             <p className="text-rose-600 font-semibold text-xl">
-              The Baby Smile initiative exists to restore dignity and hope through simple but meaningful solidarity.
+              The Baby Smile initiative exists to restore dignity and hope
+              through simple but meaningful solidarity.
             </p>
           </div>
         </div>

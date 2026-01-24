@@ -83,7 +83,9 @@ export default function DonationConfirmationModal({
             {donationType === "financial" && amount && (
               <p className="text-sm text-gray-600">
                 Montant:{" "}
-                <span className="font-semibold text-rose-600">{amount} MAD</span>
+                <span className="font-semibold text-rose-600">
+                  {amount} MAD
+                </span>
               </p>
             )}
             {donationType === "material" && items && items.length > 0 && (

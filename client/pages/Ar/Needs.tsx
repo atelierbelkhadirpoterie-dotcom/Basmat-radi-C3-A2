@@ -15,7 +15,10 @@ export default function ArNeeds() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-rose-50" dir="rtl">
+    <div
+      className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-rose-50"
+      dir="rtl"
+    >
       {/* Header */}
       <header className="sticky top-0 bg-white shadow-sm z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -43,9 +46,7 @@ export default function ArNeeds() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             الاحتياجات الأساسية
           </h1>
-          <p className="text-gray-600">
-            ما يحتاجه الأطفال في وضعية الهشاشة
-          </p>
+          <p className="text-gray-600">ما يحتاجه الأطفال في وضعية الهشاشة</p>
         </div>
 
         {/* Needs Grid */}

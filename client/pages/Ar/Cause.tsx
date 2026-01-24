@@ -3,7 +3,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ArCause() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-rose-50" dir="rtl">
+    <div
+      className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-rose-50"
+      dir="rtl"
+    >
       {/* Header */}
       <header className="sticky top-0 bg-white shadow-sm z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -40,15 +43,18 @@ export default function ArCause() {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-8">
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
             <p>
-              هناك رضع وأطفال يعيشون دون رعاية أسرية مستقرة، دون حماية كافية، ودون تلبية لاحتياجاتهم الأساسية.
+              هناك رضع وأطفال يعيشون دون رعاية أسرية مستقرة، دون حماية كافية،
+              ودون تلبية لاحتياجاتهم الأساسية.
             </p>
 
             <p>
-              غياب الحليب، الحفاضات، الملابس، والعناية الصحية يجعل بداية الحياة قاسية وغير عادلة.
+              غياب الحليب، الحفاضات، الملابس، والعناية الصحية يجعل بداية الحياة
+              قاسية وغير عادلة.
             </p>
 
             <p className="text-rose-600 font-semibold text-xl">
-              حملة بسمة رضيع جاءت لتمنح هؤلاء الأطفال حقهم في الكرامة، عبر تضامن بسيط لكنه مؤثر.
+              حملة بسمة رضيع جاءت لتمنح هؤلاء الأطفال حقهم في الكرامة، عبر تضامن
+              بسيط لكنه مؤثر.
             </p>
           </div>
         </div>
