@@ -63,6 +63,8 @@ export default function EnDonate() {
       const data = await response.json();
       if (data.success) {
         console.log("✅ Notification sent successfully");
+        setDonationType(type);
+        setShowConfirmation(true);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
