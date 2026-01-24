@@ -2,6 +2,7 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import { handleDemo } from "./routes/demo";
+import { handleDonationNotification } from "./routes/send-donation-notification";
 
 export function createServer() {
   const app = express();
@@ -18,6 +19,9 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Donation notification route
+  app.post("/api/send-donation-notification", handleDonationNotification);
 
   return app;
 }
