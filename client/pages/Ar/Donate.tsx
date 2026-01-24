@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, MapPin, Phone, MapPinOff } from "lucide-react";
+import { ChevronRight, MapPin } from "lucide-react";
 import { useState } from "react";
+import DonationConfirmationModal from "@/components/DonationConfirmationModal";
 
 export default function ArDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
