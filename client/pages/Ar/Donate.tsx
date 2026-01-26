@@ -19,7 +19,6 @@ export default function ArDonate() {
     "financial",
   );
 
-
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
     "حليب الرضع",

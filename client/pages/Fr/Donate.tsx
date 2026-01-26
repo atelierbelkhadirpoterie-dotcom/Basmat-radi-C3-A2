@@ -19,7 +19,6 @@ export default function FrDonate() {
     "financial",
   );
 
-
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
     "Lait infantile",
