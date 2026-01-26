@@ -179,14 +179,31 @@ export default function FrDonate() {
                 </div>
               </div>
 
-              <a
-                href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full py-4 px-6 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
-              >
-                Faire un don
-              </a>
+              <div className="flex flex-col md:flex-row gap-8 items-center">
+                {/* QR Code à gauche */}
+                <a
+                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 transition-transform duration-300 hover:scale-110"
+                >
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
+                    alt="QR Code PayPal"
+                    className="w-40 h-40 rounded-lg shadow-lg"
+                  />
+                </a>
+
+                {/* Bouton à droite */}
+                <a
+                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 w-full py-4 px-6 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                >
+                  Faire un don
+                </a>
+              </div>
             </div>
           </div>
 
