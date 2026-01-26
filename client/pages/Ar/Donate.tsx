@@ -1,8 +1,17 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
-import PayPalButton from "@/components/PayPalButton";
+
+declare global {
+  interface Window {
+    paypal?: {
+      HostedButtons: (config: { hostedButtonId: string }) => {
+        render: (selector: string) => void;
+      };
+    };
+  }
+}
 
 export default function ArDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
@@ -19,6 +28,16 @@ export default function ArDonate() {
   const [donationType, setDonationType] = useState<"financial" | "material">(
     "financial",
   );
+
+  useEffect(() => {
+    if (paymentMethod === "paypal" && window.paypal) {
+      window.paypal
+        .HostedButtons({
+          hostedButtonId: "SJXY25QW5YKA6",
+        })
+        .render("#paypal-container-SJXY25QW5YKA6");
+    }
+  }, [paymentMethod]);
 
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
@@ -194,9 +213,7 @@ export default function ArDonate() {
                   الدفع ببطاقة بنكية: {donationAmount} درهم
                 </button>
               ) : (
-                <div className="w-full">
-                  <PayPalButton />
-                </div>
+                <div id="paypal-container-SJXY25QW5YKA6"></div>
               )}
             </div>
           </div>
