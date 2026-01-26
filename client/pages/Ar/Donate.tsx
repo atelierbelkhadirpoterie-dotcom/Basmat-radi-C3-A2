@@ -191,26 +191,18 @@ export default function ArDonate() {
                   href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block transition-transform duration-300 hover:scale-105 mx-auto w-fit"
+                  className="block w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
                 >
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
-                    alt="QR Code PayPal"
-                    className="w-48 h-48 rounded-lg shadow-lg"
-                  />
+                  الدفع عبر PayPal: {donationAmount} درهم
                 </a>
               ) : (
                 <a
                   href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block transition-transform duration-300 hover:scale-105 mx-auto w-fit"
+                  className="block w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
                 >
-                  <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
-                    alt="QR Code PayPal"
-                    className="w-48 h-48 rounded-lg shadow-lg"
-                  />
+                  الدفع عبر PayPal: {donationAmount} درهم
                 </a>
               )}
             </div>
