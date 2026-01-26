@@ -30,12 +30,11 @@ export default function FrDonate() {
   );
 
   useEffect(() => {
-    if (paymentMethod === "paypal" && window.paypal) {
-      window.paypal
-        .HostedButtons({
-          hostedButtonId: "SJXY25QW5YKA6",
-        })
-        .render("#paypal-container-SJXY25QW5YKA6");
+    if (paymentMethod === "paypal") {
+      window.open(
+        "https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG",
+        "_blank"
+      );
     }
   }, [paymentMethod]);
 
