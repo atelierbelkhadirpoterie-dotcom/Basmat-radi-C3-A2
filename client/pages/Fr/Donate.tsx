@@ -3,16 +3,6 @@ import { ChevronLeft, MapPin } from "lucide-react";
 import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
 
-declare global {
-  interface Window {
-    paypal?: {
-      HostedButtons: (config: { hostedButtonId: string }) => {
-        render: (selector: string) => void;
-      };
-    };
-  }
-}
-
 export default function FrDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
