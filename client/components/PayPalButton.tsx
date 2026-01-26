@@ -1,27 +1,12 @@
-import { useEffect } from "react";
-
-declare global {
-  interface Window {
-    paypal?: {
-      HostedButtons: (config: { hostedButtonId: string }) => {
-        render: (selector: string) => void;
-      };
-    };
-  }
-}
-
 export default function PayPalButton() {
-  const containerId = "paypal-container-SJXY25QW5YKA6";
-
-  useEffect(() => {
-    if (window.paypal) {
-      window.paypal
-        .HostedButtons({
-          hostedButtonId: "SJXY25QW5YKA6",
-        })
-        .render(`#${containerId}`);
-    }
-  }, []);
-
-  return <div id={containerId}></div>;
+  return (
+    <a
+      href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="w-full inline-block py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+    >
+      Faire un don via PayPal
+    </a>
+  );
 }
