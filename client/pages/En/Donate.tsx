@@ -186,12 +186,12 @@ export default function EnDonate() {
                   href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full transition-transform duration-300 hover:scale-105"
+                  className="block transition-transform duration-300 hover:scale-105 mx-auto w-fit"
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
                     alt="QR Code PayPal"
-                    className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
+                    className="w-48 h-48 rounded-lg shadow-lg"
                   />
                 </a>
               ) : (
@@ -199,12 +199,12 @@ export default function EnDonate() {
                   href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full transition-transform duration-300 hover:scale-105"
+                  className="block transition-transform duration-300 hover:scale-105 mx-auto w-fit"
                 >
                   <img
                     src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
                     alt="QR Code PayPal"
-                    className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
+                    className="w-48 h-48 rounded-lg shadow-lg"
                   />
                 </a>
               )}
