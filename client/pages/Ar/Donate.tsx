@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
 import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
+import PayPalButton from "@/components/PayPalButton";
 
 export default function ArDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
@@ -185,12 +186,18 @@ export default function ArDonate() {
                 </div>
               </div>
 
-              <button
-                onClick={() => sendDonationNotification("financial")}
-                className="w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
-              >
-                تابع الدفع: {donationAmount} درهم
-              </button>
+              {paymentMethod === "card" ? (
+                <button
+                  onClick={() => sendDonationNotification("financial")}
+                  className="w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
+                >
+                  الدفع ببطاقة بنكية: {donationAmount} درهم
+                </button>
+              ) : (
+                <div className="w-full">
+                  <PayPalButton />
+                </div>
+              )}
             </div>
           </div>
 
