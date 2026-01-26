@@ -179,25 +179,14 @@ export default function FrDonate() {
                 </div>
               </div>
 
-              {paymentMethod === "card" ? (
-                <a
-                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
-                >
-                  Payer avec PayPal : {donationAmount} dirhams
-                </a>
-              ) : (
-                <a
-                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full py-4 px-6 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
-                >
-                  Payer avec PayPal : {donationAmount} dirhams
-                </a>
-              )}
+              <a
+                href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full py-4 px-6 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+              >
+                Faire un don
+              </a>
             </div>
           </div>
 
