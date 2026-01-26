@@ -205,7 +205,14 @@ export default function FrDonate() {
                   Payer par Carte bancaire : {donationAmount} dirhams
                 </button>
               ) : (
-                <div id="paypal-container-SJXY25QW5YKA6"></div>
+                <a
+                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                >
+                  Payer avec PayPal : {donationAmount} dirhams
+                </a>
               )}
             </div>
           </div>
