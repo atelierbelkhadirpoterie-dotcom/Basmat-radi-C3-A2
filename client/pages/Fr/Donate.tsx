@@ -179,12 +179,18 @@ export default function FrDonate() {
                 </div>
               </div>
 
-              <button
-                onClick={() => sendDonationNotification("financial")}
-                className="w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
-              >
-                Continuer le paiement : {donationAmount} dirhams
-              </button>
+              {paymentMethod === "card" ? (
+                <button
+                  onClick={() => sendDonationNotification("financial")}
+                  className="w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
+                >
+                  Payer par Carte bancaire : {donationAmount} dirhams
+                </button>
+              ) : (
+                <div className="w-full">
+                  <PayPalButton />
+                </div>
+              )}
             </div>
           </div>
 
