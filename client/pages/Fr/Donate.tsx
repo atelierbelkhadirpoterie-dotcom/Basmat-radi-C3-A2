@@ -29,14 +29,6 @@ export default function FrDonate() {
     "financial",
   );
 
-  useEffect(() => {
-    if (paymentMethod === "paypal") {
-      window.open(
-        "https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG",
-        "_blank"
-      );
-    }
-  }, [paymentMethod]);
 
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
