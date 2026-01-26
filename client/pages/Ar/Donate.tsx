@@ -1,17 +1,7 @@
 import { Link } from "react-router-dom";
 import { ChevronRight, MapPin } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
-
-declare global {
-  interface Window {
-    paypal?: {
-      HostedButtons: (config: { hostedButtonId: string }) => {
-        render: (selector: string) => void;
-      };
-    };
-  }
-}
 
 export default function ArDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
@@ -29,15 +19,6 @@ export default function ArDonate() {
     "financial",
   );
 
-  useEffect(() => {
-    if (paymentMethod === "paypal" && window.paypal) {
-      window.paypal
-        .HostedButtons({
-          hostedButtonId: "SJXY25QW5YKA6",
-        })
-        .render("#paypal-container-SJXY25QW5YKA6");
-    }
-  }, [paymentMethod]);
 
   const presetAmounts = [20, 50, 100, 250, 500];
   const items = [
@@ -213,7 +194,14 @@ export default function ArDonate() {
                   الدفع ببطاقة بنكية: {donationAmount} درهم
                 </button>
               ) : (
-                <div id="paypal-container-SJXY25QW5YKA6"></div>
+                <a
+                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                >
+                  الدفع عبر PayPal: {donationAmount} درهم
+                </a>
               )}
             </div>
           </div>
