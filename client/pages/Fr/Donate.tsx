@@ -180,20 +180,30 @@ export default function FrDonate() {
               </div>
 
               {paymentMethod === "card" ? (
-                <button
-                  onClick={() => sendDonationNotification("financial")}
-                  className="w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg"
+                <a
+                  href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full transition-transform duration-300 hover:scale-105"
                 >
-                  Payer par Carte bancaire : {donationAmount} dirhams
-                </button>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
+                    alt="QR Code PayPal"
+                    className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
+                  />
+                </a>
               ) : (
                 <a
                   href="https://www.paypal.com/ncp/payment/6WGLYV99Y2MDG"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg text-center"
+                  className="block w-full transition-transform duration-300 hover:scale-105"
                 >
-                  Payer avec PayPal : {donationAmount} dirhams
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F1f75f54747b54e29825eb23fdf70cfc1%2Fb24d21172e384d059e614002188c749e?format=webp&width=800&height=1200"
+                    alt="QR Code PayPal"
+                    className="w-full max-w-sm mx-auto rounded-lg shadow-lg"
+                  />
                 </a>
               )}
             </div>
