@@ -394,6 +394,13 @@ export default function EnDonate() {
           items={selectedItems}
           donorName={`${formData.firstName} ${formData.lastName}`}
         />
+
+        {/* Twilio Error Modal */}
+        <TwilioErrorModal
+          isOpen={showTwilioError}
+          onClose={() => setShowTwilioError(false)}
+          errorMessage={twilioErrorMessage}
+        />
       </main>
     </div>
   );
