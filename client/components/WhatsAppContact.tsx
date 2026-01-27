@@ -3,7 +3,6 @@ import { useState } from "react";
 
 const contacts = [
   { name: "Walid", phone: "+212646610766" },
-  { name: "Chahd Malak", phone: "+212609869603" },
   { name: "Adnane (Problèmes/Réclamations)", phone: "+212675202336" },
 ];
 
