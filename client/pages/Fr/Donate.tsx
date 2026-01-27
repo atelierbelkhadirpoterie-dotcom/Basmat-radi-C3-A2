@@ -63,13 +63,24 @@ export default function FrDonate() {
       });
 
       const data = await response.json();
+
+      if (!response.ok) {
+        console.error(`❌ Server error (${response.status}):`, data.error || data.message);
+        alert(`Erreur: ${data.message || "Échec de l'envoi de la notification"}`);
+        return;
+      }
+
       if (data.success) {
         console.log("✅ Notification sent successfully");
         setDonationType(type);
         setShowConfirmation(true);
+      } else {
+        console.error("❌ Notification failed:", data.error);
+        alert(`Erreur: ${data.error || "Échec de l'envoi de la notification"}`);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
+      alert("Erreur réseau ou serveur");
     }
   };
 
