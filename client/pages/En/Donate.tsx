@@ -16,6 +16,8 @@ export default function EnDonate() {
     address: "",
   });
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showTwilioError, setShowTwilioError] = useState(false);
+  const [twilioErrorMessage, setTwilioErrorMessage] = useState("");
   const [donationType, setDonationType] = useState<"financial" | "material">(
     "financial",
   );
