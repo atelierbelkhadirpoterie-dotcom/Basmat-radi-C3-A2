@@ -16,7 +16,8 @@ if (!accountSid || !authToken) {
   );
 }
 
-const client = twilio(accountSid, authToken);
+// Create client only if credentials are available
+const client = accountSid && authToken ? twilio(accountSid, authToken) : null;
 
 // Your WhatsApp number (from Twilio)
 const fromNumber = process.env.TWILIO_WHATSAPP_FROM || "whatsapp:+14155238886";
