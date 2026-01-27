@@ -63,13 +63,24 @@ export default function EnDonate() {
       });
 
       const data = await response.json();
+
+      if (!response.ok) {
+        console.error(`❌ Server error (${response.status}):`, data.error || data.message);
+        alert(`Error: ${data.message || "Failed to send notification"}`);
+        return;
+      }
+
       if (data.success) {
         console.log("✅ Notification sent successfully");
         setDonationType(type);
         setShowConfirmation(true);
+      } else {
+        console.error("❌ Notification failed:", data.error);
+        alert(`Error: ${data.error || "Failed to send notification"}`);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
+      alert("Network or server error");
     }
   };
 
