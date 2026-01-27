@@ -1,14 +1,22 @@
 import { RequestHandler } from "express";
 import twilio from "twilio";
 
-const accountSid = "AC263af387b4c70921cf392a7b125de152";
-const authToken = "e6a72ccccfeb9e2de21f768afd5cafa1";
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+if (!accountSid || !authToken) {
+  console.warn(
+    "TWILIO_ACCOUNT_SID or TWILIO_AUTH_TOKEN is not configured. WhatsApp notifications will not work."
+  );
+}
+
 const client = twilio(accountSid, authToken);
 
 // Your WhatsApp number (from Twilio)
-const fromNumber = "whatsapp:+14155238886";
+const fromNumber = process.env.TWILIO_WHATSAPP_FROM || "whatsapp:+14155238886";
 // Your personal WhatsApp number to receive notifications
-const toNumber = "whatsapp:+212612989463";
+const toNumber =
+  process.env.TWILIO_TO_NUMBER || "whatsapp:+212612989463";
 
 interface DonationData {
   firstName: string;
