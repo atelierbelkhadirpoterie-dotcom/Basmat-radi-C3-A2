@@ -9,15 +9,21 @@
   port = 3000
 
 [functions]
-  external_node_modules = ["express", "twilio"]
+  external_node_modules = ["twilio"]
   node_bundler = "esbuild"
-  included_files = ["dist/server/**"]
 
-# API Routes - Route to Netlify Functions
+# API Routes - Rewrite to Netlify Functions (no redirect, actual rewrite)
 [[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
+  from = "/api/send-donation-notification"
+  to = "/.netlify/functions/send-donation-notification"
   status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/twilio-status"
+  to = "/.netlify/functions/twilio-status"
+  status = 200
+  force = true
 
 # SPA Routing - Redirige toutes les requêtes non trouvées vers index.html
 [[redirects]]
