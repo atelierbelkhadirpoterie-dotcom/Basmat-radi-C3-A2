@@ -397,6 +397,13 @@ export default function ArDonate() {
           items={selectedItems}
           donorName={`${formData.name} ${formData.familyName}`}
         />
+
+        {/* Twilio Error Modal */}
+        <TwilioErrorModal
+          isOpen={showTwilioError}
+          onClose={() => setShowTwilioError(false)}
+          errorMessage={twilioErrorMessage}
+        />
       </main>
     </div>
   );
