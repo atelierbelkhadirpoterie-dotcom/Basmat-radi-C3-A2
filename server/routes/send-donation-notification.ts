@@ -7,8 +7,14 @@ const authToken = process.env.TWILIO_AUTH_TOKEN;
 console.log("🔍 Twilio Configuration Check:");
 console.log("  - TWILIO_ACCOUNT_SID:", accountSid ? "✅ Set" : "❌ Missing");
 console.log("  - TWILIO_AUTH_TOKEN:", authToken ? "✅ Set" : "❌ Missing");
-console.log("  - TWILIO_WHATSAPP_FROM:", process.env.TWILIO_WHATSAPP_FROM ? "✅ Set" : "❌ Missing");
-console.log("  - TWILIO_TO_NUMBER:", process.env.TWILIO_TO_NUMBER ? "✅ Set" : "❌ Missing");
+console.log(
+  "  - TWILIO_WHATSAPP_FROM:",
+  process.env.TWILIO_WHATSAPP_FROM ? "✅ Set" : "❌ Missing",
+);
+console.log(
+  "  - TWILIO_TO_NUMBER:",
+  process.env.TWILIO_TO_NUMBER ? "✅ Set" : "❌ Missing",
+);
 
 if (!accountSid || !authToken) {
   console.error(
@@ -88,10 +94,10 @@ export const handleDonationNotification: RequestHandler = async (req, res) => {
     if (error instanceof Error) {
       errorMessage = error.message;
       // Check if it's a Twilio error with code
-      if ('code' in error) {
+      if ("code" in error) {
         console.error(`Twilio Error Code: ${(error as any).code}`);
       }
-      if ('status' in error) {
+      if ("status" in error) {
         errorStatus = (error as any).status || 500;
       }
     }

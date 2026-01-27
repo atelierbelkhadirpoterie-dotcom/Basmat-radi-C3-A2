@@ -68,7 +68,10 @@ export default function ArDonate() {
       const data = await response.json();
 
       if (!response.ok) {
-        console.error(`❌ Server error (${response.status}):`, data.error || data.message);
+        console.error(
+          `❌ Server error (${response.status}):`,
+          data.error || data.message,
+        );
         setTwilioErrorMessage(data.error || data.message || "Server error");
         setShowTwilioError(true);
         return;
@@ -85,7 +88,9 @@ export default function ArDonate() {
       }
     } catch (error) {
       console.error("Error sending notification:", error);
-      setTwilioErrorMessage(error instanceof Error ? error.message : "Network error");
+      setTwilioErrorMessage(
+        error instanceof Error ? error.message : "Network error",
+      );
       setShowTwilioError(true);
     }
   };

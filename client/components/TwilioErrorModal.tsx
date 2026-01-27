@@ -48,7 +48,8 @@ export default function TwilioErrorModal({
           </h2>
 
           <p className="text-center text-gray-600 mb-6">
-            Le serveur a mal tourné. Veuillez nous contacter via WhatsApp pour confirmer votre don.
+            Le serveur a mal tourné. Veuillez nous contacter via WhatsApp pour
+            confirmer votre don.
           </p>
 
           {errorMessage && (
