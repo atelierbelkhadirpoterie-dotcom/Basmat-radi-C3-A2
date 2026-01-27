@@ -35,6 +35,16 @@ interface DonationData {
 
 export const handleDonationNotification: RequestHandler = async (req, res) => {
   try {
+    // Check if Twilio is properly configured
+    if (!client) {
+      console.error("Twilio client not initialized. Missing credentials.");
+      return res.status(500).json({
+        success: false,
+        message: "Twilio is not properly configured on this server",
+        error: "Missing TWILIO_ACCOUNT_SID or TWILIO_AUTH_TOKEN",
+      });
+    }
+
     const { firstName, lastName, phone, donationType, amount, selectedItems } =
       req.body as DonationData;
 
