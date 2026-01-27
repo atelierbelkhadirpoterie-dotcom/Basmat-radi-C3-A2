@@ -80,10 +80,26 @@ export const handleDonationNotification: RequestHandler = async (req, res) => {
     });
   } catch (error) {
     console.error("Error sending WhatsApp notification:", error);
-    return res.status(500).json({
+
+    // Extract detailed error info
+    let errorMessage = "Unknown error";
+    let errorStatus = 500;
+
+    if (error instanceof Error) {
+      errorMessage = error.message;
+      // Check if it's a Twilio error with code
+      if ('code' in error) {
+        console.error(`Twilio Error Code: ${(error as any).code}`);
+      }
+      if ('status' in error) {
+        errorStatus = (error as any).status || 500;
+      }
+    }
+
+    return res.status(errorStatus).json({
       success: false,
       message: "Failed to send notification",
-      error: error instanceof Error ? error.message : "Unknown error",
+      error: errorMessage,
     });
   }
 };
