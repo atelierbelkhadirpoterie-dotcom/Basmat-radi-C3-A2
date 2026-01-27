@@ -69,7 +69,8 @@ export default function FrDonate() {
 
       if (!response.ok) {
         console.error(`❌ Server error (${response.status}):`, data.error || data.message);
-        alert(`Erreur: ${data.message || "Échec de l'envoi de la notification"}`);
+        setTwilioErrorMessage(data.error || data.message || "Server error");
+        setShowTwilioError(true);
         return;
       }
 
@@ -79,11 +80,13 @@ export default function FrDonate() {
         setShowConfirmation(true);
       } else {
         console.error("❌ Notification failed:", data.error);
-        alert(`Erreur: ${data.error || "Échec de l'envoi de la notification"}`);
+        setTwilioErrorMessage(data.error || "Failed to send notification");
+        setShowTwilioError(true);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
-      alert("Erreur réseau ou serveur");
+      setTwilioErrorMessage(error instanceof Error ? error.message : "Network error");
+      setShowTwilioError(true);
     }
   };
 
