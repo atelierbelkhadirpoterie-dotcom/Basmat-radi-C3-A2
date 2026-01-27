@@ -63,13 +63,24 @@ export default function ArDonate() {
       });
 
       const data = await response.json();
+
+      if (!response.ok) {
+        console.error(`❌ Server error (${response.status}):`, data.error || data.message);
+        alert(`خطأ: ${data.message || "فشل إرسال الإشعار"}`);
+        return;
+      }
+
       if (data.success) {
         console.log("✅ Notification sent successfully");
         setDonationType(type);
         setShowConfirmation(true);
+      } else {
+        console.error("❌ Notification failed:", data.error);
+        alert(`خطأ: ${data.error || "فشل إرسال الإشعار"}`);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
+      alert("خطأ في الشبكة أو الخادم");
     }
   };
 
