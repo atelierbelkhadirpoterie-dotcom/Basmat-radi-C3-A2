@@ -69,7 +69,8 @@ export default function ArDonate() {
 
       if (!response.ok) {
         console.error(`❌ Server error (${response.status}):`, data.error || data.message);
-        alert(`خطأ: ${data.message || "فشل إرسال الإشعار"}`);
+        setTwilioErrorMessage(data.error || data.message || "Server error");
+        setShowTwilioError(true);
         return;
       }
 
@@ -79,11 +80,13 @@ export default function ArDonate() {
         setShowConfirmation(true);
       } else {
         console.error("❌ Notification failed:", data.error);
-        alert(`خطأ: ${data.error || "فشل إرسال الإشعار"}`);
+        setTwilioErrorMessage(data.error || "Failed to send notification");
+        setShowTwilioError(true);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
-      alert("خطأ في الشبكة أو الخادم");
+      setTwilioErrorMessage(error instanceof Error ? error.message : "Network error");
+      setShowTwilioError(true);
     }
   };
 
