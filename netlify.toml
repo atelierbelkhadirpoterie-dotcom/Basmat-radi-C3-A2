@@ -9,8 +9,15 @@
   port = 3000
 
 [functions]
-  external_node_modules = ["express"]
+  external_node_modules = ["express", "twilio"]
   node_bundler = "esbuild"
+  included_files = ["dist/server/**"]
+
+# API Routes - Route to Netlify Functions
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
 
 # SPA Routing - Redirige toutes les requêtes non trouvées vers index.html
 [[redirects]]
