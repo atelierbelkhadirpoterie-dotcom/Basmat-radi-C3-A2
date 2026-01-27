@@ -4,9 +4,15 @@ import twilio from "twilio";
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 
+console.log("🔍 Twilio Configuration Check:");
+console.log("  - TWILIO_ACCOUNT_SID:", accountSid ? "✅ Set" : "❌ Missing");
+console.log("  - TWILIO_AUTH_TOKEN:", authToken ? "✅ Set" : "❌ Missing");
+console.log("  - TWILIO_WHATSAPP_FROM:", process.env.TWILIO_WHATSAPP_FROM ? "✅ Set" : "❌ Missing");
+console.log("  - TWILIO_TO_NUMBER:", process.env.TWILIO_TO_NUMBER ? "✅ Set" : "❌ Missing");
+
 if (!accountSid || !authToken) {
-  console.warn(
-    "TWILIO_ACCOUNT_SID or TWILIO_AUTH_TOKEN is not configured. WhatsApp notifications will not work.",
+  console.error(
+    "❌ TWILIO_ACCOUNT_SID or TWILIO_AUTH_TOKEN is not configured. WhatsApp notifications will not work.",
   );
 }
 
