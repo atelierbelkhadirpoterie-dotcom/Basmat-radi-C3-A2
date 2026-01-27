@@ -69,7 +69,8 @@ export default function EnDonate() {
 
       if (!response.ok) {
         console.error(`❌ Server error (${response.status}):`, data.error || data.message);
-        alert(`Error: ${data.message || "Failed to send notification"}`);
+        setTwilioErrorMessage(data.error || data.message || "Server error");
+        setShowTwilioError(true);
         return;
       }
 
@@ -79,11 +80,13 @@ export default function EnDonate() {
         setShowConfirmation(true);
       } else {
         console.error("❌ Notification failed:", data.error);
-        alert(`Error: ${data.error || "Failed to send notification"}`);
+        setTwilioErrorMessage(data.error || "Failed to send notification");
+        setShowTwilioError(true);
       }
     } catch (error) {
       console.error("Error sending notification:", error);
-      alert("Network or server error");
+      setTwilioErrorMessage(error instanceof Error ? error.message : "Network error");
+      setShowTwilioError(true);
     }
   };
 
