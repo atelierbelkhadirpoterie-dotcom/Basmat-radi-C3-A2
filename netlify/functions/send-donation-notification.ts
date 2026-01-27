@@ -15,15 +15,18 @@ const handler: Handler = async (event) => {
     const authToken = process.env.TWILIO_AUTH_TOKEN;
 
     console.log("🔍 Twilio Configuration Check:");
-    console.log("  - TWILIO_ACCOUNT_SID:", accountSid ? "✅ Set" : "❌ Missing");
+    console.log(
+      "  - TWILIO_ACCOUNT_SID:",
+      accountSid ? "✅ Set" : "❌ Missing",
+    );
     console.log("  - TWILIO_AUTH_TOKEN:", authToken ? "✅ Set" : "❌ Missing");
     console.log(
       "  - TWILIO_WHATSAPP_FROM:",
-      process.env.TWILIO_WHATSAPP_FROM ? "✅ Set" : "❌ Missing"
+      process.env.TWILIO_WHATSAPP_FROM ? "✅ Set" : "❌ Missing",
     );
     console.log(
       "  - TWILIO_TO_NUMBER:",
-      process.env.TWILIO_TO_NUMBER ? "✅ Set" : "❌ Missing"
+      process.env.TWILIO_TO_NUMBER ? "✅ Set" : "❌ Missing",
     );
 
     // Check if Twilio is properly configured
@@ -46,8 +49,7 @@ const handler: Handler = async (event) => {
     const fromNumber =
       process.env.TWILIO_WHATSAPP_FROM || "whatsapp:+14155238886";
     // Your personal WhatsApp number to receive notifications
-    const toNumber =
-      process.env.TWILIO_TO_NUMBER || "whatsapp:+212612989463";
+    const toNumber = process.env.TWILIO_TO_NUMBER || "whatsapp:+212612989463";
 
     const body = JSON.parse(event.body || "{}");
     const { firstName, lastName, phone, donationType, amount, selectedItems } =
