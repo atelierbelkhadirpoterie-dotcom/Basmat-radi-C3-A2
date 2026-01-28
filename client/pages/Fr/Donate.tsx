@@ -3,6 +3,8 @@ import { ChevronLeft, MapPin } from "lucide-react";
 import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
 import TwilioErrorModal from "@/components/TwilioErrorModal";
+import Logo from "@/components/Logo";
+import { isValidPhoneNumber } from "@/utils/phone-validation";
 
 export default function FrDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
@@ -107,9 +109,7 @@ export default function FrDonate() {
             Retour à l'accueil
             <ChevronLeft className="w-5 h-5" />
           </Link>
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-orange-400">
-            <span className="text-xl">🌟</span>
-          </div>
+          <Logo size="sm" />
         </div>
       </header>
 
@@ -367,8 +367,9 @@ export default function FrDonate() {
               disabled={
                 selectedItems.length === 0 ||
                 !formData.firstName ||
-                !formData.phone
+                !isValidPhoneNumber(formData.phone)
               }
+              title={!isValidPhoneNumber(formData.phone) ? "Le numéro doit contenir exactement 10 chiffres" : ""}
             >
               Confirmer le don matériel
             </button>
