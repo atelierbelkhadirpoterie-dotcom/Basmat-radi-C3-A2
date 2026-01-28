@@ -371,8 +371,9 @@ export default function EnDonate() {
               disabled={
                 selectedItems.length === 0 ||
                 !formData.firstName ||
-                !formData.phone
+                !isValidPhoneNumber(formData.phone)
               }
+              title={!isValidPhoneNumber(formData.phone) ? "Phone number must contain exactly 10 digits" : ""}
             >
               Confirm Material Donation
             </button>
