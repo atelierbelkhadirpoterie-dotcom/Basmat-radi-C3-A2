@@ -109,9 +109,7 @@ export default function EnDonate() {
             Back to Home
             <ChevronLeft className="w-5 h-5" />
           </Link>
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-orange-400">
-            <span className="text-xl">🌟</span>
-          </div>
+          <Logo size="sm" />
         </div>
       </header>
 
