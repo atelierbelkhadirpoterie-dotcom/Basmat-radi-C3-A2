@@ -1,5 +1,5 @@
 [build]
-  command = "npx tsc --project tsconfig.functions.json && npm run build"
+  command = "npm run build"
   functions = "netlify/functions"
   publish = "dist/spa"
   environment = { NODE_VERSION = "20.13.0" }
