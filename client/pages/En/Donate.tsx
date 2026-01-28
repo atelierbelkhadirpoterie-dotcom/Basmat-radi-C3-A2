@@ -3,6 +3,8 @@ import { ChevronLeft, MapPin } from "lucide-react";
 import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
 import TwilioErrorModal from "@/components/TwilioErrorModal";
+import Logo from "@/components/Logo";
+import { isValidPhoneNumber } from "@/utils/phone-validation";
 
 export default function EnDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
