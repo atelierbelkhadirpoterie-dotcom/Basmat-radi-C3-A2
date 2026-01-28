@@ -12,10 +12,10 @@
   external_node_modules = ["twilio"]
   node_bundler = "esbuild"
 
-# API Routes - Rewrite to unified API function
+# API Routes - Rewrite to unified API function (serverless-http handles paths)
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/api/:splat"
+  to = "/.netlify/functions/api"
   status = 200
   force = true
 
