@@ -2,14 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
-    "outDir": ".netlify/functions",
+    "outDir": "netlify/functions",
     "declaration": false,
     "declarationMap": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "bundler"
+    "module": "commonjs",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "skipLibCheck": true
   },
-  "include": ["netlify/functions/**/*"],
+  "include": ["netlify/functions/**/*.ts"],
   "exclude": ["node_modules", "dist", "client", "server"]
 }
