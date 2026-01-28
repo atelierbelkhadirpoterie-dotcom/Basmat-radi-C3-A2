@@ -369,7 +369,11 @@ export default function FrDonate() {
                 !formData.firstName ||
                 !isValidPhoneNumber(formData.phone)
               }
-              title={!isValidPhoneNumber(formData.phone) ? "Le numéro doit contenir exactement 10 chiffres" : ""}
+              title={
+                !isValidPhoneNumber(formData.phone)
+                  ? "Le numéro doit contenir exactement 10 chiffres"
+                  : ""
+              }
             >
               Confirmer le don matériel
             </button>

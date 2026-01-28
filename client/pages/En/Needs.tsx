@@ -38,9 +38,7 @@ export default function EnNeeds() {
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             Essential Needs
           </h1>
-          <p className="text-gray-600">
-            What vulnerable children need most
-          </p>
+          <p className="text-gray-600">What vulnerable children need most</p>
         </div>
 
         {/* Needs Grid */}

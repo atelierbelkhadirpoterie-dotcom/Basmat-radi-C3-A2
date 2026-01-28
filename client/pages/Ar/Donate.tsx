@@ -370,9 +370,15 @@ export default function ArDonate() {
               onClick={() => sendDonationNotification("material")}
               className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={
-                selectedItems.length === 0 || !formData.name || !isValidPhoneNumber(formData.phone)
+                selectedItems.length === 0 ||
+                !formData.name ||
+                !isValidPhoneNumber(formData.phone)
               }
-              title={!isValidPhoneNumber(formData.phone) ? "رقم الهاتف يجب أن يحتوي على 10 أرقام بالضبط" : ""}
+              title={
+                !isValidPhoneNumber(formData.phone)
+                  ? "رقم الهاتف يجب أن يحتوي على 10 أرقام بالضبط"
+                  : ""
+              }
             >
               تأكيد التبرع العيني
             </button>

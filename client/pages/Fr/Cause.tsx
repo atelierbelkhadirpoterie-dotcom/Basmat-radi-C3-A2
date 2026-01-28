@@ -35,15 +35,19 @@ export default function FrCause() {
         <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12 mb-8">
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
             <p>
-              Des nourrissons et des enfants vivent aujourd'hui sans encadrement familial stable, sans protection suffisante et sans accès aux besoins fondamentaux.
+              Des nourrissons et des enfants vivent aujourd'hui sans encadrement
+              familial stable, sans protection suffisante et sans accès aux
+              besoins fondamentaux.
             </p>
 
             <p>
-              L'absence de lait, de couches, de vêtements et de soins rend leurs premières années extrêmement difficiles.
+              L'absence de lait, de couches, de vêtements et de soins rend leurs
+              premières années extrêmement difficiles.
             </p>
 
             <p className="text-rose-600 font-semibold text-xl">
-              La campagne Basma Radi3 vise à redonner dignité, sécurité et espoir par un acte solidaire accessible à tous.
+              La campagne Basma Radi3 vise à redonner dignité, sécurité et
+              espoir par un acte solidaire accessible à tous.
             </p>
           </div>
         </div>
