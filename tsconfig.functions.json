@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": ".netlify/functions",
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler"
+  },
+  "include": ["netlify/functions/**/*"],
+  "exclude": ["node_modules", "dist", "client", "server"]
+}
