@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function EnNeeds() {
   const needs = [
@@ -26,9 +27,7 @@ export default function EnNeeds() {
             Back to Home
             <ChevronRight className="w-5 h-5" />
           </Link>
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-rose-400 to-orange-400">
-            <span className="text-xl">🌟</span>
-          </div>
+          <Logo size="sm" />
         </div>
       </header>
 
