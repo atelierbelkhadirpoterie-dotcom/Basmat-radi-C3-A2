@@ -3,6 +3,8 @@ import { ChevronRight, MapPin } from "lucide-react";
 import { useState } from "react";
 import DonationConfirmationModal from "@/components/DonationConfirmationModal";
 import TwilioErrorModal from "@/components/TwilioErrorModal";
+import Logo from "@/components/Logo";
+import { isValidPhoneNumber } from "@/utils/phone-validation";
 
 export default function ArDonate() {
   const [donationAmount, setDonationAmount] = useState(20);
@@ -110,13 +112,7 @@ export default function ArDonate() {
             <ChevronRight className="w-5 h-5" />
             العودة للرئيسية
           </Link>
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full overflow-hidden shadow-md">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fcebc20bd57884b32800f08d8a19ef8e0%2Fa86d43f3f0d3470bbe8045bf06f0e150?format=webp&width=800&height=1200"
-              alt="Baby Smile Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Logo size="sm" />
         </div>
       </header>
 
@@ -374,8 +370,9 @@ export default function ArDonate() {
               onClick={() => sendDonationNotification("material")}
               className="w-full mt-8 py-4 bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold text-lg rounded-lg transition-all duration-300 hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={
-                selectedItems.length === 0 || !formData.name || !formData.phone
+                selectedItems.length === 0 || !formData.name || !isValidPhoneNumber(formData.phone)
               }
+              title={!isValidPhoneNumber(formData.phone) ? "رقم الهاتف يجب أن يحتوي على 10 أرقام بالضبط" : ""}
             >
               تأكيد التبرع العيني
             </button>
