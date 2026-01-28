@@ -12,16 +12,10 @@
   external_node_modules = ["twilio"]
   node_bundler = "esbuild"
 
-# API Routes - Rewrite to Netlify Functions (no redirect, actual rewrite)
+# API Routes - Rewrite to unified API function
 [[redirects]]
-  from = "/api/send-donation-notification"
-  to = "/.netlify/functions/send-donation-notification"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "/api/twilio-status"
-  to = "/.netlify/functions/twilio-status"
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true
 
