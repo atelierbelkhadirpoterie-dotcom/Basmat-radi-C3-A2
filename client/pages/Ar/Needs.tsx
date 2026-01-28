@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function ArNeeds() {
   const needs = [
@@ -29,13 +30,7 @@ export default function ArNeeds() {
             <ChevronRight className="w-5 h-5" />
             العودة للرئيسية
           </Link>
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-full overflow-hidden shadow-md">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fcebc20bd57884b32800f08d8a19ef8e0%2Fa86d43f3f0d3470bbe8045bf06f0e150?format=webp&width=800&height=1200"
-              alt="Baby Smile Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Logo size="sm" />
         </div>
       </header>
 
