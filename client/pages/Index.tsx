@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "@/components/Logo";
 
 export default function Index() {
   return (
@@ -6,13 +7,7 @@ export default function Index() {
       <div className="text-center max-w-lg w-full">
         {/* Logo/Icon */}
         <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-24 h-24 rounded-full overflow-hidden shadow-lg">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Fcebc20bd57884b32800f08d8a19ef8e0%2Fa86d43f3f0d3470bbe8045bf06f0e150?format=webp&width=800&height=1200"
-              alt="Baby Smile Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
+          <Logo size="lg" className="shadow-lg" />
         </div>
 
         {/* Title */}
